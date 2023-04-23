@@ -7,11 +7,12 @@ module blueintegral_mat_mult(
   output reg [7:0] output_data
 );
 
+reg [1:0] A [1:0][1:0], B [1:0][1:0];
+reg [1:0] temp [1:0][1:0];
 
 always @* begin
 
-reg [1:0] A [1:0], B [1:0];
-reg [1:0] temp [1:0];
+
 
 A[0][0] = input_data[7];
 A[0][1] = input_data[6];
@@ -31,16 +32,19 @@ temp[1][1] = (A[1][0]*B[0][1]) + (A[1][1]*B[1][1]);
 
 
 //combine into output
-//output_data = {8'b0};
-//assign output_data = output_data[0:1] | temp[0][0];
-//assign output_data = output_data[2:3] | temp[0][1];
-//assign output_data = output_data[4:5] | temp[1][0];
-//assign output_data = output_data[6:7] | temp[1][1];
-//, temp[0][1], temp[1][0], temp[1][1], 4'b0};
-assign output_data = {A[0][0], A[0][1], A[1][0], A[1][1], 4'b0};
 
-//assign output_data = {temp[0][0], temp[0][1], temp[1][0], temp[1][1], 4'b0};
-//assign output_data = 8'b11000000;
+//temp[0][0] = 2;
+assign output_data = 8'b00000000;
+assign output_data = output_data | {temp[0][0], 6'b000000};
+assign output_data = output_data | {2'b00, temp[0][1], 4'b0000};
+assign output_data = output_data | {4'b0000, temp[1][0], 2'b00};
+assign output_data = output_data | {6'b000000, temp[1][1]};
+
+//temp[1][0] = 2;
+//output_data = {temp[0][1]};
+
+
+
 
 end
 
