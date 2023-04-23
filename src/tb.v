@@ -17,7 +17,7 @@ wire[7:0] outputs;
 assign OUT = outputs[7:0];
 
 blueintegral_mat_mult blueintegral_mat_mult (
-.input_data (inputs),
-.output_data (outputs)
+.io_in (inputs),
+.io_out (outputs)
 );
 endmodule

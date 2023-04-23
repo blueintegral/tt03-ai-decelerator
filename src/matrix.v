@@ -3,8 +3,8 @@
 
 
 module blueintegral_mat_mult(
-  input [7:0] input_data,
-  output [7:0] output_data
+  input [7:0] io_in,
+  output [7:0] io_out
 );
 
 reg [1:0] A [1:0][1:0], B [1:0][1:0];
@@ -15,15 +15,15 @@ always @* begin
 
 
 
-A[0][0] = input_data[7];
-A[0][1] = input_data[6];
-A[1][0] = input_data[5];
-A[1][1] = input_data[4];
+A[0][0] = io_in[7];
+A[0][1] = io_in[6];
+A[1][0] = io_in[5];
+A[1][1] = io_in[4];
 
-B[0][0] = input_data[3];
-B[0][1] = input_data[2];
-B[1][0] = input_data[1];
-B[1][1] = input_data[0];
+B[0][0] = io_in[3];
+B[0][1] = io_in[2];
+B[1][0] = io_in[1];
+B[1][1] = io_in[0];
 
 temp[0][0] = (A[0][0]*B[0][0]) + (A[0][1]*B[1][0]);
 temp[0][1] = (A[0][0]*B[0][1]) + (A[0][1]*B[1][1]);
@@ -48,7 +48,7 @@ output_data_reg = output_data_reg | {6'b000000, temp[1][1]};
 
 end
 
-assign output_data = output_data_reg;
+assign io_out = output_data_reg;
 
 
 
