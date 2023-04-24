@@ -21,3 +21,13 @@ async def test_my_design(dut):
 	dut._log.info(dut.OUT.value)
 	assert dut.OUT.value == 0b01001000
 	dut._log.info("passed test 3")
+	dut.IN.value = 0b11111111
+	await Timer(1, units="ms")
+	dut._log.info(dut.OUT.value)
+	assert dut.OUT.value == 0b10101010
+	dut._log.info("passed test 4")
+	dut.IN.value = 0b00000000
+	await Timer(1, units="ms")
+	dut._log.info(dut.OUT.value)
+	assert dut.OUT.value == 0b00000000
+	dut._log.info("passed test 5")

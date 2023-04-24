@@ -24,32 +24,29 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Use the DIP switches to set the value of each position in the two matrices you're multiplying. 
+	Just performs arithmetic to do the matrix multiplication and outputs the result.
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Flip the DIP switches, read the output.
+      Use the DIP switches to set the value of each position in the two matrices you're multiplying. That means that each position in each input matrix can only contain a zero or one. The output is 4 groups of 2 bits, each group representing one of the positions in the output matrix. 
 
 # A description of what the inputs do
   inputs:               
-    - Matrix 1, top left
-    - Matrix 1, bottom left
-    - Matrix 1, top right
-    - Matrix 1, bottom right
-    - Matrix 2, top left
-    - Matrix 2, bottom left
-    - Matrix 2, top right
-    - Matrix 2, bottom right
+    - 7: Matrix 1, top left
+    - 6: Matrix 1, top right
+    - 5: Matrix 1, bottom left
+    - 4: Matrix 1, bottom right
+    - 3: Matrix 2, top left
+    - 2: Matrix 2, top right
+    - 1: Matrix 2, bottom left
+    - 0: Matrix 2, bottom right
 # A description of what the outputs do
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - [7:6] : Result matrix, top left
+    - [5:4] : Result matrix, top right
+    - [3:2] : Result matrix, bottom left
+    - [1:0] : Result matrix, bottom right
+
 
 # The following fields are optional
   tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
