@@ -43,10 +43,14 @@ documentation:
     - 0 is Matrix 2, bottom right
 # A description of what the outputs do
   outputs:
-    - 7 to 6 is Result matrix, top left
-    - 5 to 4 is Result matrix, top right
-    - 3 to 2 is Result matrix, bottom left
-    - 1 to 0 is Result matrix, bottom right
+    - 7 is Result matrix, top left, bit 1
+    - 6 is Result matrix, top left, bit 0
+    - 5 is Result matrix, top right, bit 1
+    - 4 is Result matrix, top right, bit 0
+    - 3 is Result matrix, bottom left, bit 1
+    - 2 is Result matrix, bottom left, bit 0
+    - 1 is Result matrix, bottom right, bit 1
+    - 0 is Result matrix, bottom right, bit 0
 
 
 # The following fields are optional
