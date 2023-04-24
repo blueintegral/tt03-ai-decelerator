@@ -32,20 +32,20 @@ Use the DIP switches to set the value of each position in the two matrices you'r
 
 # A description of what the inputs do
   inputs:               
-    - 7: Matrix 1, top left
-    - 6: Matrix 1, top right
-    - 5: Matrix 1, bottom left
-    - 4: Matrix 1, bottom right
-    - 3: Matrix 2, top left
-    - 2: Matrix 2, top right
-    - 1: Matrix 2, bottom left
-    - 0: Matrix 2, bottom right
+    - 7 - Matrix 1, top left
+    - 6 - Matrix 1, top right
+    - 5 - Matrix 1, bottom left
+    - 4 - Matrix 1, bottom right
+    - 3 - Matrix 2, top left
+    - 2 - Matrix 2, top right
+    - 1 - Matrix 2, bottom left
+    - 0 - Matrix 2, bottom right
 # A description of what the outputs do
   outputs:
-    - [7:6] : Result matrix, top left
-    - [5:4] : Result matrix, top right
-    - [3:2] : Result matrix, bottom left
-    - [1:0] : Result matrix, bottom right
+    - [7-6] - Result matrix, top left
+    - [5-4] - Result matrix, top right
+    - [3-2] - Result matrix, bottom left
+    - [1-0] - Result matrix, bottom right
 
 
 # The following fields are optional
